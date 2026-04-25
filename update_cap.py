@@ -64,4 +64,9 @@ except Exception as e:
     if os.path.exists("cap.csv"):
         print("📁 保留舊的 cap.csv")
     else:
-        print("❌ 沒有 cap.csv 可用")
+        print("❌ 沒有 cap.csv 可用 → 建立空檔")
+
+        # ⭐ 保底建立空檔（唯一新增）
+        pd.DataFrame(columns=["證券代號", "股本"]).to_csv(
+            "cap.csv", index=False, encoding="utf-8-sig"
+        )

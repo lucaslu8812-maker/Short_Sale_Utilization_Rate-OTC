@@ -2,7 +2,7 @@ name: Auto Update
 
 on:
   schedule:
-    - cron: "0 8 * * *"   # 台灣 16:00
+    - cron: "0 8 * * *"
   workflow_dispatch:
 
 permissions:
@@ -24,7 +24,6 @@ jobs:
     - name: Install packages
       run: pip install -r requirements.txt
 
-    # ⭐ 新增這行（先產生 cap.csv）
     - name: Update cap
       run: python update_cap.py
 
